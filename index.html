@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keeply — Smart photo cleanup for iOS</title>
+    <meta
+      name="description"
+      content="Keeply is a privacy-first iOS app that finds duplicates, blurry shots, and bad exposure so you can clean your photo library with confidence."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <a class="logo" href="#">Keeply</a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#notify" class="button secondary">Notify me</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Coming soon on iOS</p>
+          <h1>Clean up your photo library with confidence.</h1>
+          <p class="subhead">
+            Keeply scans your camera roll to surface duplicates, blur, and bad exposure.
+            You stay in control with guided suggestions and a safe delete flow.
+          </p>
+          <div class="cta-group">
+            <button class="button primary">Join the early access list</button>
+            <button class="button ghost">See how it works</button>
+          </div>
+          <div class="hero-badges">
+            <div>
+              <h4>Privacy-first</h4>
+              <p>No uploads. No accounts. All on-device.</p>
+            </div>
+            <div>
+              <h4>SwiftUI native</h4>
+              <p>Designed for iPhone with buttery-smooth UI.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="phone-shell">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+              <div class="screen-header">
+                <span>Keeply</span>
+                <span>96% scanned</span>
+              </div>
+              <div class="screen-card">
+                <p class="label">Duplicates</p>
+                <h3>248 photos</h3>
+                <div class="pill-group">
+                  <span class="pill">Best pick</span>
+                  <span class="pill">Keep 1</span>
+                  <span class="pill">Delete 5</span>
+                </div>
+              </div>
+              <div class="screen-card">
+                <p class="label">Blurry</p>
+                <h3>37 photos</h3>
+                <div class="pill-group">
+                  <span class="pill muted">Review later</span>
+                  <span class="pill">Auto-skip</span>
+                </div>
+              </div>
+              <div class="screen-card highlighted">
+                <p class="label">Exposure</p>
+                <h3>12 photos</h3>
+                <div class="pill-group">
+                  <span class="pill">Too dark</span>
+                  <span class="pill">Too bright</span>
+                </div>
+              </div>
+              <div class="screen-footer">
+                <button class="button primary small">Review results</button>
+                <button class="button ghost small">Rescan</button>
+              </div>
+            </div>
+          </div>
+          <div class="hero-glow"></div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="features" class="section">
+        <div class="section-header">
+          <p class="eyebrow">Core features</p>
+          <h2>Everything you need for a pristine camera roll.</h2>
+          <p class="section-lead">
+            Keeply groups similar photos, scores quality, and makes it easy to keep your
+            favorites without the stress.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Photo library scan</h3>
+            <p>Analyze your entire library or a specific time range using optimized thumbnails.</p>
+          </article>
+          <article>
+            <h3>Duplicate grouping</h3>
+            <p>Near-duplicate detection for burst shots and repeated takes, with best-pick suggestions.</p>
+          </article>
+          <article>
+            <h3>Quality scoring</h3>
+            <p>Explainable blur and exposure scoring helps you understand every recommendation.</p>
+          </article>
+          <article>
+            <h3>Review & confirm</h3>
+            <p>Toggle Keep/Delete per photo and confirm with one tap when you are ready.</p>
+          </article>
+          <article>
+            <h3>Safe deletion flow</h3>
+            <p>Nothing is deleted without your explicit approval through the Photos framework.</p>
+          </article>
+          <article>
+            <h3>Built for iOS</h3>
+            <p>SwiftUI, Photos, and on-device compute for speed, privacy, and battery efficiency.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="how" class="section alt">
+        <div class="section-header">
+          <p class="eyebrow">How it works</p>
+          <h2>Simple, thoughtful, and transparent.</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="step-number">01</span>
+            <h3>Request access</h3>
+            <p>We only need read access to analyze your photos, never upload them.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">02</span>
+            <h3>Analyze with care</h3>
+            <p>Downsampled images power fast checks for similarity, blur, and exposure.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">03</span>
+            <h3>Review recommendations</h3>
+            <p>Groups are presented with clear explanations so you decide what stays.</p>
+          </div>
+          <div class="step">
+            <span class="step-number">04</span>
+            <h3>Confirm & delete</h3>
+            <p>We only delete after your confirmation using secure Photos change requests.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="privacy" class="section">
+        <div class="privacy-card">
+          <div>
+            <p class="eyebrow">Privacy by design</p>
+            <h2>Everything stays on your device.</h2>
+            <p>
+              Keeply never uploads photos, never tracks your behavior, and never requires an
+              account. Your library stays yours.
+            </p>
+          </div>
+          <div class="privacy-list">
+            <div>
+              <h4>No uploads</h4>
+              <p>All analysis happens locally using optimized thumbnails.</p>
+            </div>
+            <div>
+              <h4>No tracking</h4>
+              <p>You decide if analytics are ever enabled.</p>
+            </div>
+            <div>
+              <h4>No account required</h4>
+              <p>Start scanning in seconds with zero onboarding friction.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notify" class="section alt">
+        <div class="cta">
+          <div>
+            <p class="eyebrow">Get early access</p>
+            <h2>Be the first to try Keeply.</h2>
+            <p>Join the launch list for updates, beta access, and tips for photo organization.</p>
+          </div>
+          <form class="cta-form">
+            <input type="email" name="email" placeholder="you@email.com" />
+            <button class="button primary" type="submit">Notify me</button>
+          </form>
+          <p class="fine-print">Launching in 2024. Available for iPhone.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <h3>Keeply</h3>
+        <p>Smart photo cleanup for iOS.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#privacy">Privacy</a>
+      </div>
+      <p class="fine-print">© 2024 Keeply. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

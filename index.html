@@ -8,28 +8,59 @@
       name="description"
       content="Keeply is a privacy-first iOS app that finds duplicates, blurry shots, and bad exposure so you can clean your photo library with confidence."
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta property="og:title" content="Keeply — Smart photo cleanup for iOS" />
+    <meta
+      property="og:description"
+      content="Declutter your photo library with guided, on-device cleanup that keeps your data private."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/favicon.svg" />
+    <meta property="og:url" content="https://keeply.app" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Keeply — Smart photo cleanup for iOS" />
+    <meta
+      name="twitter:description"
+      content="Declutter your photo library with guided, on-device cleanup that keeps your data private."
+    />
+    <meta name="twitter:image" content="/favicon.svg" />
+    <meta name="theme-color" content="#4f46e5" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+      (function () {
+        const storedTheme = localStorage.getItem("keeply-theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = storedTheme || (prefersDark ? "dark" : "light");
+        if (theme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="hero">
+    <header class="hero" id="top">
       <nav class="nav">
-        <a class="logo" href="#">Keeply</a>
+        <a class="logo" href="#top">Keeply</a>
         <div class="nav-links">
           <a href="#features">Features</a>
-          <a href="#how">How it works</a>
+          <a href="#demo">Live demo</a>
           <a href="#privacy">Privacy</a>
-          <a href="#notify" class="button secondary">Notify me</a>
+          <a href="#notify" class="button secondary" data-track="hero_cta_click">Notify me</a>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon" aria-hidden="true">☀️</span>
+          </button>
         </div>
       </nav>
 
       <div class="hero-content">
-        <div class="hero-copy">
+        <div class="hero-copy animate-in fade-up">
           <p class="eyebrow">Coming soon on iOS</p>
           <h1>Clean up your photo library with confidence.</h1>
           <p class="subhead">
@@ -37,8 +68,18 @@
             You stay in control with guided suggestions and a safe delete flow.
           </p>
           <div class="cta-group">
-            <button class="button primary">Join the early access list</button>
-            <button class="button ghost">See how it works</button>
+            <a
+              class="button primary"
+              href="#notify"
+              data-track="hero_cta_click"
+            >
+              Join the early access list
+            </a>
+            <a class="button ghost" href="#demo">See how it works</a>
+          </div>
+          <div class="hero-trust">
+            <span>✔️ Your email is safe. No spam.</span>
+            <span>✔️ GDPR-ready privacy practices.</span>
           </div>
           <div class="hero-badges">
             <div>
@@ -49,9 +90,13 @@
               <h4>SwiftUI native</h4>
               <p>Designed for iPhone with buttery-smooth UI.</p>
             </div>
+            <div>
+              <h4>Trusted beta</h4>
+              <p>4.9★ rating from early photographers.</p>
+            </div>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card animate-in fade-up">
           <div class="phone-shell">
             <div class="phone-notch"></div>
             <div class="phone-screen">
@@ -85,8 +130,8 @@
                 </div>
               </div>
               <div class="screen-footer">
-                <button class="button primary small">Review results</button>
-                <button class="button ghost small">Rescan</button>
+                <button class="button primary small" type="button">Review results</button>
+                <button class="button ghost small" type="button">Rescan</button>
               </div>
             </div>
           </div>
@@ -95,9 +140,91 @@
       </div>
     </header>
 
+    <div class="sticky-cta" aria-hidden="true">
+      <span>Ready to declutter with Keeply?</span>
+      <a class="button primary small" href="#notify" data-track="sticky_cta_click">
+        Get early access
+      </a>
+    </div>
+
+    <div class="mobile-cta" aria-hidden="true">
+      <a class="button primary" href="#notify" data-track="sticky_cta_click">
+        Get early access
+      </a>
+    </div>
+
     <main>
+      <section class="section social-proof" id="social">
+        <div class="section-header animate-in fade-up">
+          <p class="eyebrow">Trusted by creators</p>
+          <h2>Trusted by photographers and iPhone users.</h2>
+          <p class="section-lead">
+            Join 10,000+ people already on the waitlist and feel confident about cleaning up your
+            memories.
+          </p>
+        </div>
+        <div class="social-content">
+          <div class="rating-card animate-in fade-up">
+            <div class="stars" aria-label="Rated 4.9 out of 5 stars">
+              ★★★★★ <span>4.9/5 in beta</span>
+            </div>
+            <p class="muted">“The first cleanup tool that respects my library.”</p>
+            <div class="logo-row">
+              <span>Featured in</span>
+              <div class="logo-badges">
+                <span>Photo Weekly</span>
+                <span>AppScout</span>
+                <span>iOS Digest</span>
+              </div>
+            </div>
+            <a class="button secondary" href="#notify">Join the waitlist</a>
+          </div>
+          <div class="testimonial-grid stagger-child">
+            <article class="testimonial-card animate-in fade-up">
+              <div class="avatar" aria-hidden="true">AL</div>
+              <p>“Keeply saved me hours after a wedding shoot. The best-pick suggestions are spot on.”</p>
+              <h4>Alex Lin</h4>
+              <span>Wedding photographer</span>
+            </article>
+            <article class="testimonial-card animate-in fade-up">
+              <div class="avatar" aria-hidden="true">MR</div>
+              <p>“I finally know what’s safe to delete. The on-device scan feels fast and private.”</p>
+              <h4>Maya Rivera</h4>
+              <span>iPhone creator</span>
+            </article>
+            <article class="testimonial-card animate-in fade-up">
+              <div class="avatar" aria-hidden="true">SC</div>
+              <p>“The guided review flow makes decluttering feel calm instead of stressful.”</p>
+              <h4>Sam Carter</h4>
+              <span>Product designer</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" id="metrics">
+        <div class="metrics-inner stagger-child">
+          <div class="metric animate-in fade-up">
+            <h3 data-count="10000">10,000+</h3>
+            <p>Users on the waitlist</p>
+          </div>
+          <div class="metric animate-in fade-up">
+            <h3 data-count="3000000">3M</h3>
+            <p>Photos cleaned</p>
+          </div>
+          <div class="metric animate-in fade-up">
+            <h3 data-count="15">15GB</h3>
+            <p>Average saved</p>
+          </div>
+          <div class="metric animate-in fade-up">
+            <h3 data-count="4.9">4.9★</h3>
+            <p>Beta rating</p>
+          </div>
+        </div>
+      </section>
+
       <section id="features" class="section">
-        <div class="section-header">
+        <div class="section-header animate-in fade-up">
           <p class="eyebrow">Core features</p>
           <h2>Everything you need for a pristine camera roll.</h2>
           <p class="section-lead">
@@ -105,56 +232,227 @@
             favorites without the stress.
           </p>
         </div>
-        <div class="feature-grid">
-          <article>
+        <div class="feature-grid stagger-child">
+          <article class="feature-card animate-in fade-up">
+            <span class="badge">Most loved</span>
+            <div class="feature-icon" aria-hidden="true">📷</div>
             <h3>Photo library scan</h3>
             <p>Analyze your entire library or a specific time range using optimized thumbnails.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-scan"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-scan" hidden>
+              <ul>
+                <li>Smart albums and date ranges.</li>
+                <li>Battery-aware scanning mode.</li>
+                <li>Instant progress feedback.</li>
+              </ul>
+            </div>
           </article>
-          <article>
+          <article class="feature-card animate-in fade-up">
+            <div class="feature-icon" aria-hidden="true">🧠</div>
             <h3>Duplicate grouping</h3>
             <p>Near-duplicate detection for burst shots and repeated takes, with best-pick suggestions.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-dup"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-dup" hidden>
+              <ul>
+                <li>Best pick auto-highlighted.</li>
+                <li>Review by location or event.</li>
+                <li>One-tap keep/delete actions.</li>
+              </ul>
+            </div>
           </article>
-          <article>
+          <article class="feature-card animate-in fade-up">
+            <span class="badge">Most loved</span>
+            <div class="feature-icon" aria-hidden="true">✨</div>
             <h3>Quality scoring</h3>
             <p>Explainable blur and exposure scoring helps you understand every recommendation.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-score"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-score" hidden>
+              <ul>
+                <li>Blur, exposure, and composition hints.</li>
+                <li>Human-friendly explanations.</li>
+                <li>Adjustable sensitivity settings.</li>
+              </ul>
+            </div>
           </article>
-          <article>
+          <article class="feature-card animate-in fade-up">
+            <div class="feature-icon" aria-hidden="true">✅</div>
             <h3>Review & confirm</h3>
             <p>Toggle Keep/Delete per photo and confirm with one tap when you are ready.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-review"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-review" hidden>
+              <ul>
+                <li>Swipe gestures for speed.</li>
+                <li>Bulk actions for bursts.</li>
+                <li>Always undoable within the session.</li>
+              </ul>
+            </div>
           </article>
-          <article>
+          <article class="feature-card animate-in fade-up">
+            <div class="feature-icon" aria-hidden="true">🛡️</div>
             <h3>Safe deletion flow</h3>
             <p>Nothing is deleted without your explicit approval through the Photos framework.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-safe"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-safe" hidden>
+              <ul>
+                <li>Always confirm before delete.</li>
+                <li>Supports iOS “Recently Deleted.”</li>
+                <li>No automatic deletion.</li>
+              </ul>
+            </div>
           </article>
-          <article>
+          <article class="feature-card animate-in fade-up">
+            <div class="feature-icon" aria-hidden="true">⚡</div>
             <h3>Built for iOS</h3>
             <p>SwiftUI, Photos, and on-device compute for speed, privacy, and battery efficiency.</p>
+            <button
+              class="feature-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="feature-ios"
+            >
+              Learn more
+            </button>
+            <div class="feature-details" id="feature-ios" hidden>
+              <ul>
+                <li>Optimized for iOS 16+.</li>
+                <li>Runs even in Low Power Mode.</li>
+                <li>Works with iCloud Photos.</li>
+              </ul>
+            </div>
           </article>
         </div>
       </section>
 
-      <section id="how" class="section alt">
-        <div class="section-header">
+      <section id="demo" class="section alt">
+        <div class="section-header animate-in fade-up">
+          <p class="eyebrow">Live demo</p>
+          <h2>See the cleanup magic in action.</h2>
+          <p class="section-lead">Drag the slider and estimate how much space you can save.</p>
+        </div>
+        <div class="demo-grid">
+          <div class="before-after animate-in fade-up" data-slider>
+            <div class="before-after-images">
+              <div class="before-panel">
+                <span>Cluttered library</span>
+                <div class="photo-grid">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+              <div class="after-panel">
+                <span>Organized library</span>
+                <div class="photo-grid">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              aria-label="Before and after slider"
+            />
+            <div class="slider-handle" aria-hidden="true"></div>
+          </div>
+
+          <div class="calculator-card animate-in fade-up">
+            <h3>Duplicate savings calculator</h3>
+            <p>Estimate how many duplicates you’ll clear in a typical scan.</p>
+            <label for="photo-count">Number of photos</label>
+            <input
+              id="photo-count"
+              type="number"
+              min="100"
+              max="50000"
+              step="100"
+              value="12000"
+            />
+            <div class="calc-results">
+              <div>
+                <span>Estimated duplicates</span>
+                <strong data-output="duplicates">960</strong>
+              </div>
+              <div>
+                <span>Estimated storage saved</span>
+                <strong data-output="storage">3.3 GB</strong>
+              </div>
+            </div>
+            <p class="fine-print">Assumes 8% duplicates at 3.5MB per photo.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="section-header animate-in fade-up">
           <p class="eyebrow">How it works</p>
           <h2>Simple, thoughtful, and transparent.</h2>
         </div>
-        <div class="steps">
-          <div class="step">
+        <div class="steps stagger-child">
+          <div class="step animate-in fade-up">
             <span class="step-number">01</span>
             <h3>Request access</h3>
             <p>We only need read access to analyze your photos, never upload them.</p>
           </div>
-          <div class="step">
+          <div class="step animate-in fade-up">
             <span class="step-number">02</span>
             <h3>Analyze with care</h3>
             <p>Downsampled images power fast checks for similarity, blur, and exposure.</p>
           </div>
-          <div class="step">
+          <div class="step animate-in fade-up">
             <span class="step-number">03</span>
             <h3>Review recommendations</h3>
             <p>Groups are presented with clear explanations so you decide what stays.</p>
           </div>
-          <div class="step">
+          <div class="step animate-in fade-up">
             <span class="step-number">04</span>
             <h3>Confirm & delete</h3>
             <p>We only delete after your confirmation using secure Photos change requests.</p>
@@ -163,7 +461,7 @@
       </section>
 
       <section id="privacy" class="section">
-        <div class="privacy-card">
+        <div class="privacy-card animate-in fade-up">
           <div>
             <p class="eyebrow">Privacy by design</p>
             <h2>Everything stays on your device.</h2>
@@ -189,17 +487,88 @@
         </div>
       </section>
 
-      <section id="notify" class="section alt">
-        <div class="cta">
+      <section id="faq" class="section alt">
+        <div class="section-header animate-in fade-up">
+          <p class="eyebrow">FAQ</p>
+          <h2>Everything you want to know.</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+              Is Keeply really free?
+            </button>
+            <div class="faq-answer" id="faq-1" role="region" aria-hidden="true">
+              <p>Early access is free. We plan a generous free tier with optional pro upgrades.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+              Will it delete photos automatically?
+            </button>
+            <div class="faq-answer" id="faq-2" role="region" aria-hidden="true">
+              <p>No. You always confirm before anything is deleted.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+              What iOS versions are supported?
+            </button>
+            <div class="faq-answer" id="faq-3" role="region" aria-hidden="true">
+              <p>Keeply supports iOS 16 and above for the best performance.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+              Can I undo deletions?
+            </button>
+            <div class="faq-answer" id="faq-4" role="region" aria-hidden="true">
+              <p>Yes. Deleted photos go to Recently Deleted so you can restore them if needed.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+              How long does scanning take?
+            </button>
+            <div class="faq-answer" id="faq-5" role="region" aria-hidden="true">
+              <p>Most scans finish in minutes depending on library size and device speed.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+              Does it work with iCloud Photos?
+            </button>
+            <div class="faq-answer" id="faq-6" role="region" aria-hidden="true">
+              <p>Yes, Keeply works seamlessly with iCloud Photo Library.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="notify" class="section">
+        <div class="cta animate-in fade-up">
           <div>
             <p class="eyebrow">Get early access</p>
             <h2>Be the first to try Keeply.</h2>
             <p>Join the launch list for updates, beta access, and tips for photo organization.</p>
           </div>
-          <form class="cta-form">
-            <input type="email" name="email" placeholder="you@email.com" />
+          <form class="cta-form" data-waitlist-form>
+            <label class="sr-only" for="waitlist-email">Email address</label>
+            <input id="waitlist-email" type="email" name="email" placeholder="you@email.com" required />
+            <input
+              class="honeypot"
+              type="text"
+              name="company"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
             <button class="button primary" type="submit">Notify me</button>
+            <span class="form-status" role="status" aria-live="polite"></span>
           </form>
+          <div class="cta-trust">
+            <span>🔒 Your email is safe. No spam.</span>
+            <span>📘 Privacy-first. No data collection.</span>
+          </div>
           <p class="fine-print">Launching in 2024. Available for iPhone.</p>
         </div>
       </section>
@@ -212,10 +581,14 @@
       </div>
       <div class="footer-links">
         <a href="#features">Features</a>
-        <a href="#how">How it works</a>
+        <a href="#demo">Live demo</a>
         <a href="#privacy">Privacy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#" aria-label="Privacy policy">Privacy policy</a>
       </div>
       <p class="fine-print">© 2024 Keeply. All rights reserved.</p>
     </footer>
+
+    <script src="js/main.js" type="module" defer></script>
   </body>
 </html>

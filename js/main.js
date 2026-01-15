@@ -27,12 +27,9 @@ enableThemeTransitions();
 
 const themeToggle = document.querySelector(".theme-toggle");
 if (themeToggle) {
-  const setToggleIcon = () => {
+  const setToggleState = () => {
     const isDark = document.documentElement.getAttribute("data-theme") === "dark";
-    const icon = themeToggle.querySelector(".theme-toggle-icon");
-    if (icon) {
-      icon.textContent = isDark ? "🌙" : "☀️";
-    }
+    themeToggle.setAttribute("aria-pressed", isDark.toString());
   };
 
   const toggleTheme = () => {
@@ -44,11 +41,11 @@ if (themeToggle) {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("keeply-theme", "dark");
     }
-    setToggleIcon();
+    setToggleState();
   };
 
   themeToggle.addEventListener("click", toggleTheme);
-  setToggleIcon();
+  setToggleState();
 }
 
 const setStaggerIndexes = () => {
@@ -203,7 +200,7 @@ if (waitlistForm) {
     }
 
     button.disabled = true;
-    button.textContent = "Joining…";
+    button.textContent = "Joining...";
     setStatus("", "");
 
     try {
@@ -214,7 +211,7 @@ if (waitlistForm) {
       track("form_success");
     } catch (error) {
       setStatus("Something went wrong. Please try again.", "error");
-      button.textContent = "Notify me";
+      button.textContent = "Get early access";
       track("form_error", { reason: "network" });
     } finally {
       button.disabled = false;
@@ -312,7 +309,7 @@ if (metrics.length) {
         return `${Math.round(value)}GB`;
       }
       if (target === 4.9) {
-        return `${value.toFixed(1)}★`;
+        return `${value.toFixed(1)}/5`;
       }
       return Math.round(value).toString();
     };

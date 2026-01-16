@@ -14,7 +14,7 @@
       content="Duplicate photo cleaner for iPhone from WePickaxe. Find duplicates, blur, and low-quality photos on-device, then delete safely and free storage."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/resources/wepickaxe-logo.png" />
+    <meta property="og:image" content="/resources/wepickaxe-logo.svg" />
     <meta property="og:url" content="https://wepickaxe.com" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Keeply by WePickaxe - Duplicate Photo Cleaner for iPhone" />
@@ -22,10 +22,10 @@
       name="twitter:description"
       content="Duplicate photo cleaner for iPhone from WePickaxe. Find duplicates, blur, and low-quality photos on-device, then delete safely and free storage."
     />
-    <meta name="twitter:image" content="/resources/wepickaxe-logo.png" />
+    <meta name="twitter:image" content="/resources/wepickaxe-logo.svg" />
     <meta name="theme-color" content="#45c0ea" />
-    <link rel="icon" type="image/png" href="/resources/wepickaxe-logo.png" />
-    <link rel="apple-touch-icon" href="/resources/wepickaxe-logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/resources/wepickaxe-logo.svg" />
+    <link rel="apple-touch-icon" href="/resources/wepickaxe-logo.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -50,7 +50,7 @@
         <nav class="nav">
           <a class="logo" href="#top">
             <span class="logo-mark">
-              <img src="/resources/wepickaxe-logo.png" alt="WePickaxe logo" />
+              <img src="/resources/wepickaxe-logo.svg" alt="WePickaxe logo" />
             </span>
             <span>WePickaxe</span>
           </a>
@@ -69,7 +69,7 @@
           <div class="hero-copy animate-in fade-up">
             <div class="brand-lockup">
               <span class="logo-mark large">
-                <img src="/resources/wepickaxe-logo.png" alt="WePickaxe logo" />
+                <img src="/resources/wepickaxe-logo.svg" alt="WePickaxe logo" />
               </span>
               <div>
                 <p class="eyebrow">WePickaxe presents</p>
@@ -338,89 +338,225 @@
       <section id="demo" class="section alt">
         <div class="wrap">
           <div class="section-header animate-in fade-up">
-            <p class="eyebrow">Demo</p>
-            <h2>See the cleanup before and after.</h2>
+            <p class="eyebrow">Interactive Demo</p>
+            <h2>Watch your library transform.</h2>
             <p class="section-lead">
-              Drag the slider to compare clutter vs. clean and see what Keeply can save.
+              Experience how Keeply identifies duplicates, flags quality issues, and helps you reclaim storage.
             </p>
           </div>
-          <div class="demo-grid">
-            <div class="before-after animate-in fade-up" data-slider>
-              <div class="before-after-images">
-                <div class="before-panel">
-                  <span>Cluttered library</span>
-                  <div class="photo-grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+
+          <div class="demo-showcase">
+            <div class="demo-phone-container animate-in fade-up">
+              <div class="demo-phone" data-demo-phone>
+                <div class="demo-phone-notch"></div>
+                <div class="demo-phone-screen">
+                  <div class="demo-screen-header">
+                    <span class="demo-app-title">Keeply</span>
+                    <div class="demo-scan-status" data-scan-status>
+                      <div class="demo-scan-progress">
+                        <div class="demo-scan-bar" data-scan-bar></div>
+                      </div>
+                      <span data-scan-text>Scanning...</span>
+                    </div>
+                  </div>
+
+                  <div class="demo-photo-library" data-photo-library>
+                    <div class="demo-photo" data-type="duplicate" data-group="1">
+                      <div class="demo-photo-inner landscape"></div>
+                      <span class="demo-badge duplicate">Duplicate</span>
+                    </div>
+                    <div class="demo-photo" data-type="best" data-group="1">
+                      <div class="demo-photo-inner landscape"></div>
+                      <span class="demo-badge best">Best</span>
+                    </div>
+                    <div class="demo-photo" data-type="duplicate" data-group="1">
+                      <div class="demo-photo-inner landscape"></div>
+                      <span class="demo-badge duplicate">Duplicate</span>
+                    </div>
+                    <div class="demo-photo" data-type="blur">
+                      <div class="demo-photo-inner portrait blur"></div>
+                      <span class="demo-badge blur">Blurry</span>
+                    </div>
+                    <div class="demo-photo" data-type="keep">
+                      <div class="demo-photo-inner portrait"></div>
+                    </div>
+                    <div class="demo-photo" data-type="duplicate" data-group="2">
+                      <div class="demo-photo-inner square"></div>
+                      <span class="demo-badge duplicate">Duplicate</span>
+                    </div>
+                    <div class="demo-photo" data-type="best" data-group="2">
+                      <div class="demo-photo-inner square"></div>
+                      <span class="demo-badge best">Best</span>
+                    </div>
+                    <div class="demo-photo" data-type="dark">
+                      <div class="demo-photo-inner landscape dark"></div>
+                      <span class="demo-badge dark">Dark</span>
+                    </div>
+                    <div class="demo-photo" data-type="keep">
+                      <div class="demo-photo-inner portrait"></div>
+                    </div>
+                    <div class="demo-photo" data-type="duplicate" data-group="3">
+                      <div class="demo-photo-inner landscape"></div>
+                      <span class="demo-badge duplicate">Duplicate</span>
+                    </div>
+                    <div class="demo-photo" data-type="best" data-group="3">
+                      <div class="demo-photo-inner landscape"></div>
+                      <span class="demo-badge best">Best</span>
+                    </div>
+                    <div class="demo-photo" data-type="keep">
+                      <div class="demo-photo-inner square"></div>
+                    </div>
+                  </div>
+
+                  <div class="demo-results-panel" data-results-panel>
+                    <div class="demo-result-card">
+                      <div class="demo-result-icon duplicate-icon"></div>
+                      <div class="demo-result-info">
+                        <span class="demo-result-label">Duplicates</span>
+                        <strong data-result="duplicates">6</strong>
+                      </div>
+                    </div>
+                    <div class="demo-result-card">
+                      <div class="demo-result-icon quality-icon"></div>
+                      <div class="demo-result-info">
+                        <span class="demo-result-label">Quality issues</span>
+                        <strong data-result="quality">2</strong>
+                      </div>
+                    </div>
+                    <div class="demo-result-card highlight">
+                      <div class="demo-result-icon storage-icon"></div>
+                      <div class="demo-result-info">
+                        <span class="demo-result-label">Space to free</span>
+                        <strong data-result="space">28 MB</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="demo-action-bar">
+                    <button class="demo-btn secondary" data-demo-rescan>Rescan</button>
+                    <button class="demo-btn primary" data-demo-clean>Clean up</button>
                   </div>
                 </div>
-                <div class="after-panel">
-                  <span>Clean library</span>
-                  <div class="photo-grid">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                </div>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  value="50"
-                  aria-label="Before and after slider"
-                />
-                <div class="slider-handle" aria-hidden="true"></div>
               </div>
-              <div class="before-after-metrics">
-                <div>
-                  <span>Duplicates removed</span>
-                  <strong data-output="demo-removed">600</strong>
+              <div class="demo-phone-glow"></div>
+            </div>
+
+            <div class="demo-controls animate-in fade-up">
+              <div class="demo-control-card">
+                <h3>Simulate your library</h3>
+                <p>Adjust the sliders to see how Keeply handles different scenarios.</p>
+
+                <div class="demo-slider-group">
+                  <label for="demo-photos">
+                    <span>Total photos</span>
+                    <strong data-slider-value="photos">12,000</strong>
+                  </label>
+                  <input
+                    type="range"
+                    id="demo-photos"
+                    min="1000"
+                    max="50000"
+                    step="1000"
+                    value="12000"
+                    data-demo-slider="photos"
+                  />
+                  <div class="demo-slider-markers">
+                    <span>1K</span>
+                    <span>25K</span>
+                    <span>50K</span>
+                  </div>
                 </div>
-                <div>
+
+                <div class="demo-slider-group">
+                  <label for="demo-duplicate-rate">
+                    <span>Duplicate rate</span>
+                    <strong data-slider-value="duplicate-rate">10%</strong>
+                  </label>
+                  <input
+                    type="range"
+                    id="demo-duplicate-rate"
+                    min="5"
+                    max="30"
+                    step="1"
+                    value="10"
+                    data-demo-slider="duplicate-rate"
+                  />
+                  <div class="demo-slider-markers">
+                    <span>5%</span>
+                    <span>17%</span>
+                    <span>30%</span>
+                  </div>
+                </div>
+
+                <div class="demo-slider-group">
+                  <label for="demo-quality-rate">
+                    <span>Quality issues</span>
+                    <strong data-slider-value="quality-rate">5%</strong>
+                  </label>
+                  <input
+                    type="range"
+                    id="demo-quality-rate"
+                    min="1"
+                    max="15"
+                    step="1"
+                    value="5"
+                    data-demo-slider="quality-rate"
+                  />
+                  <div class="demo-slider-markers">
+                    <span>1%</span>
+                    <span>8%</span>
+                    <span>15%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="demo-stats-card">
+                <h4>Cleanup summary</h4>
+                <div class="demo-stat-row">
+                  <span>Photos to review</span>
+                  <div class="demo-stat-bar-container">
+                    <div class="demo-stat-bar" data-stat-bar="review" style="--percent: 15%"></div>
+                  </div>
+                  <strong data-stat="review">1,800</strong>
+                </div>
+                <div class="demo-stat-row">
+                  <span>Safe to delete</span>
+                  <div class="demo-stat-bar-container">
+                    <div class="demo-stat-bar delete" data-stat-bar="delete" style="--percent: 12%"></div>
+                  </div>
+                  <strong data-stat="delete">1,440</strong>
+                </div>
+                <div class="demo-stat-row highlight">
                   <span>Storage saved</span>
-                  <strong data-output="demo-saved">2.1 GB</strong>
+                  <div class="demo-stat-bar-container">
+                    <div class="demo-stat-bar storage" data-stat-bar="storage" style="--percent: 40%"></div>
+                  </div>
+                  <strong data-stat="storage">4.9 GB</strong>
                 </div>
-                <div>
-                  <span>Library cleaned</span>
-                  <strong data-output="demo-percent">50%</strong>
+
+                <div class="demo-cta-inline">
+                  <p>Ready to clean your real library?</p>
+                  <a href="#notify" class="button primary small">Get early access</a>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="calculator-card animate-in fade-up">
-              <h3>Storage savings estimate</h3>
-              <p>Estimate duplicates and storage you can reclaim.</p>
-              <label for="photo-count">Number of photos</label>
-              <input
-                id="photo-count"
-                type="number"
-                min="100"
-                max="50000"
-                step="100"
-                value="12000"
-              />
-              <div class="calc-results">
-                <div>
-                  <span>Estimated duplicates</span>
-                  <strong data-output="duplicates">1,200</strong>
-                </div>
-                <div>
-                  <span>Estimated storage reclaimed</span>
-                  <strong data-output="storage">4.1 GB</strong>
-                </div>
-              </div>
-              <p class="fine-print">Assumes 10% duplicates at 3.5 MB per photo.</p>
+          <div class="demo-features-row animate-in fade-up">
+            <div class="demo-feature">
+              <div class="demo-feature-icon scan-icon"></div>
+              <h4>Smart scanning</h4>
+              <p>AI-powered detection finds similar photos, not just exact matches.</p>
+            </div>
+            <div class="demo-feature">
+              <div class="demo-feature-icon safe-icon"></div>
+              <h4>Safe deletions</h4>
+              <p>Always confirms before removing. Deleted photos go to Recently Deleted.</p>
+            </div>
+            <div class="demo-feature">
+              <div class="demo-feature-icon speed-icon"></div>
+              <h4>Lightning fast</h4>
+              <p>Scans 10,000+ photos in under a minute using on-device processing.</p>
             </div>
           </div>
         </div>

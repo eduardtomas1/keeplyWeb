@@ -1,6 +1,9 @@
 import { createScrollAnimator } from "./scroll-animate.js";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const DUPLICATE_RATE = 0.1;
+const AVG_PHOTO_MB = 3.5;
+const DEMO_BASE_PHOTOS = 12000;
 
 const track = (eventName, payload = {}) => {
   if (typeof window.plausible === "function") {
@@ -222,7 +225,9 @@ if (waitlistForm) {
 const slider = document.querySelector("[data-slider]");
 if (slider) {
   const range = slider.querySelector("input[type='range']");
-  const handle = slider.querySelector(".slider-handle");
+  const removedOutput = slider.querySelector("[data-output='demo-removed']");
+  const savedOutput = slider.querySelector("[data-output='demo-saved']");
+  const percentOutput = slider.querySelector("[data-output='demo-percent']");
 
   const updateSlider = () => {
     if (!range) {
@@ -230,8 +235,20 @@ if (slider) {
     }
     const value = Number(range.value);
     slider.style.setProperty("--position", value);
-    if (handle) {
-      handle.style.left = `${value}%`;
+    range.setAttribute("aria-valuetext", `${value}% cleaned`);
+
+    const cleanedRatio = value / 100;
+    const removed = Math.round(DEMO_BASE_PHOTOS * DUPLICATE_RATE * cleanedRatio);
+    const savedGb = (removed * AVG_PHOTO_MB) / 1024;
+
+    if (removedOutput) {
+      removedOutput.textContent = removed.toLocaleString();
+    }
+    if (savedOutput) {
+      savedOutput.textContent = `${savedGb.toFixed(1)} GB`;
+    }
+    if (percentOutput) {
+      percentOutput.textContent = `${value}%`;
     }
   };
 
@@ -278,8 +295,8 @@ const updateCalculator = (shouldTrack = false) => {
     return;
   }
   const photos = Number(calculatorInput.value || 0);
-  const duplicates = Math.round(photos * 0.08);
-  const savedGb = (duplicates * 3.5) / 1024;
+  const duplicates = Math.round(photos * DUPLICATE_RATE);
+  const savedGb = (duplicates * AVG_PHOTO_MB) / 1024;
 
   animateNumber(duplicateOutput, duplicates, (val) => Math.round(val).toLocaleString());
   animateNumber(storageOutput, savedGb, (val) => `${val.toFixed(1)} GB`);
